@@ -5,16 +5,16 @@ export default function Layout({ children }: { children: ReactNode }) {
   const circleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const updateCirclePosition = (event: MouseEvent) => {
+    const updateCirclePosition = (x: number, y: number) => {
       if (circleRef.current) {
-        circleRef.current.style.left = `${event.clientX - 250}px`;
-        circleRef.current.style.top = `${event.clientY - 250}px`;
+        circleRef.current.style.left = `${x - 250}px`;
+        circleRef.current.style.top = `${y - 250}px`;
       }
     };
 
     const handleMouseMove = (event: MouseEvent) => {
       if (window.innerWidth >= 1024) {
-        updateCirclePosition(event);
+        updateCirclePosition(event.clientX, event.clientY);
       } else if (circleRef.current) {
         circleRef.current.style.left = "50%";
         circleRef.current.style.top = "50%";
@@ -22,12 +22,19 @@ export default function Layout({ children }: { children: ReactNode }) {
       }
     };
 
+    const handleTouchMove = (event: TouchEvent) => {
+      const touch = event.touches[0];
+      updateCirclePosition(touch.clientX, touch.clientY);
+    };
+
     handleMouseMove(new MouseEvent("mousemove"));
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
