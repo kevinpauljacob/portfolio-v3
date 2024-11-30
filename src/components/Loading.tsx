@@ -15,7 +15,7 @@ export default function LoadingScreen() {
   return (
     <div
       className={`fixed inset-0 bg-[#1A1A1A] flex items-center justify-center transition-transform duration-1000 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
+        isVisible ? "translate-y-0" : "-translate-y-[200%]"
       } z-50`}
     >
       <div className="bg-[#d2afff]/30 rounded-full w-[30vmax] h-[30vmax] fixed transition-all duration-150 ease-linear"></div>

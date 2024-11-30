@@ -5,12 +5,24 @@ export default function Layout({ children }: { children: ReactNode }) {
   const circleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
+    const updateCirclePosition = (event: MouseEvent) => {
       if (circleRef.current) {
         circleRef.current.style.left = `${event.clientX - 250}px`;
         circleRef.current.style.top = `${event.clientY - 250}px`;
       }
     };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (window.innerWidth >= 1024) {
+        updateCirclePosition(event);
+      } else if (circleRef.current) {
+        circleRef.current.style.left = "50%";
+        circleRef.current.style.top = "50%";
+        circleRef.current.style.transform = "translate(-50%, -50%)";
+      }
+    };
+
+    handleMouseMove(new MouseEvent("mousemove"));
 
     window.addEventListener("mousemove", handleMouseMove);
 
