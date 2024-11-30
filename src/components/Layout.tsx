@@ -13,13 +13,14 @@ export default function Layout({ children }: { children: ReactNode }) {
     };
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (window.innerWidth >= 1024) {
-        updateCirclePosition(event.clientX, event.clientY);
-      } else if (circleRef.current) {
-        circleRef.current.style.left = "50%";
-        circleRef.current.style.top = "50%";
-        circleRef.current.style.transform = "translate(-50%, -50%)";
-      }
+      // if (window.innerWidth >= 1024) {
+      //   updateCirclePosition(event.clientX, event.clientY);
+      // } else if (circleRef.current) {
+      //   circleRef.current.style.left = "50%";
+      //   circleRef.current.style.top = "50%";
+      //   circleRef.current.style.transform = "translate(-50%, -50%)";
+      // }
+      updateCirclePosition(event.clientX, event.clientY);
     };
 
     const handleTouchMove = (event: TouchEvent) => {
