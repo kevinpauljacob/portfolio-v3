@@ -13,23 +13,21 @@ export default function Layout({ children }: { children: ReactNode }) {
     };
 
     const handleMouseMove = (event: MouseEvent) => {
-      // if (window.innerWidth >= 1024) {
-      //   updateCirclePosition(event.clientX, event.clientY);
-      // } else if (circleRef.current) {
-      //   circleRef.current.style.left = "50%";
-      //   circleRef.current.style.top = "50%";
-      //   circleRef.current.style.transform = "translate(-50%, -50%)";
-      // }
-      updateCirclePosition(event.clientX, event.clientY);
+      updateCirclePosition(
+        event.clientX + window.scrollX,
+        event.clientY + window.scrollY
+      );
     };
 
     const handleTouchMove = (event: TouchEvent) => {
       const touch = event.touches[0];
-      updateCirclePosition(touch.clientX, touch.clientY);
+      updateCirclePosition(
+        touch.clientX + window.scrollX,
+        touch.clientY + window.scrollY
+      );
     };
 
-    handleMouseMove(new MouseEvent("mousemove"));
-
+    // Add listeners for both mouse and touch events
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("touchmove", handleTouchMove);
 
