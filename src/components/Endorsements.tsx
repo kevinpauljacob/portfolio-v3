@@ -17,8 +17,7 @@ const endorsements: Endorsement[] = [
     message:
       "Kevin's been a standout full stack developer at Fundinc, mastering next.js, firebase, and seamlessly integrating complex APIs. He's not only timely with his impeccable work but also a great team player. Plus, his sense of humour adds a lively spark to our workspace. If you need a skilled and fun colleague, Kevin it is! 👨‍💻🚀😄",
     linkedInURL: "https://www.linkedin.com/in/kevinpauljacob",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQE8QRCs90LZRg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1699539732099?e=1738195200&v=beta&t=syqDFl0kK2Cd31GeY-VeOvMmueYxU6XoQaQ_JK7ykZc",
+    image: "/assets/arushi.jpeg",
   },
   {
     name: "Kunal Keshan",
@@ -27,8 +26,7 @@ const endorsements: Endorsement[] = [
     message:
       "Kevin is not only a talented web developer, but he is also a pleasure to work with. He has great humour and is always up for a stimulating conversation. He approaches his work with diligence and attention to detail and is never satisfied with anything less than his best effort. Kevin is a valuable asset to any team, and I recommend him without reservation.",
     linkedInURL: "https://www.linkedin.com/in/kevinpauljacob",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQE61Fuzp-O3Rw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1670170899101?e=1738195200&v=beta&t=jsC880JYPwVXw6yPeRdgfX8fU-EZtUwn3baoOcnHQiI",
+    image: "/assets/kunal.jpeg",
   },
 ];
 
