@@ -53,7 +53,7 @@ export const socials: Socials[] = [
   },
   {
     name: "X",
-    href: "https://x.com/kevinpauljacob",
+    href: "https://x.com/xjamesladen",
     icon: <Twitter />,
   },
   {
